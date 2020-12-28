@@ -1,7 +1,7 @@
 /**
  * Author: Nikolai Tschacher
  * Date: 28.12.2020
- * Website: incolumitas.com
+ * Website: https://incolumitas.com/
  * 
  * Detecting uBlock Origin and Adblock Plus with JavaScript only.
  * 
@@ -10,9 +10,12 @@
  * The requested baiting resource does not exist locally.
  * If no adblocker is available, the http status will be 404
  * If an adblocker is active, the send() / fetch() method will fail to begin with,
- * because the adblocker prevents the loading of the url
+ * because the adblocker prevents the loading of the url.
+ * 
+ * Usage:
+ * 
+ * detectAdblock(function(usingAdblock) { console.log("Using Adblocker: " + usingAdblock) })
  */
-
 function detectAdblock(callback) {
   var flaggedURL = 'pagead/js/adsbygoogle.js';
 
