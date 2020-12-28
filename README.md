@@ -8,11 +8,11 @@ Other adblock software is very likely also supported.
 
 There are no external requests to non-local URLs. Only JavaScript is required.
 
-The library has a tiny size of only 306 Bytes.
+The library has a tiny size of only 330 Bytes.
 
 ```
 $ du -b dist/adblockDetector.min.js 
-306	dist/adblockDetector.min.js
+330	dist/adblockDetector.min.js
 ```
 
 The library was tested with the following browsers and Adblock software:
@@ -32,6 +32,7 @@ Usage in Browser:
  
 <script type="text/javascript">
   detectAdblock(function(isUsingAdblock) {
+    // isUsingAdblock is either `true`, `false` or `unknown`
     alert("Using Adblock: " + isUsingAdblock);
   })
 </script>
@@ -90,3 +91,23 @@ python -m http.server 8000
 ```
 
 Then visit the URL [http://localhost:8000/demo.html](http://localhost:8000/demo.html) in your browser.
+
+## Known Issues
+
+When passing a callback to `detectAdblock`, the callback does not in all cases return a `boolean`. Therefore, it is best 
+to use the library in such a way:
+
+```JavaScript
+async function adblockCheck() {
+  return new Promise((resolve, reject) => {
+    detectAdblock(function(isUsingAdblock) {
+      resolve(isUsingAdblock);
+    })
+  });
+}
+
+adblockCheck().then((adblockUsed) => {
+  // adblockUsed is either `true`, `false` or `unknown`
+  console.log(adblockUsed);
+});
+```
