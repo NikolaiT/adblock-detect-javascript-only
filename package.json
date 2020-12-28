@@ -1,0 +1,19 @@
+{
+  "name": "adblock-detect-javascript-only",
+  "version": "1.0.0",
+  "description": "Detecting uBlock Origin and Adblock Plus with JavaScript only",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "detecting",
+    "adblock",
+    "uBlock",
+    "Origin",
+    "Adblock",
+    "Plus"
+  ],
+  "author": "Nikolai Tschacher",
+  "license": "ISC"
+}

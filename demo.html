@@ -1,0 +1,20 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test Adblock Detection</title>
+  <meta name="description" content="Test Adblock Detection">
+  <meta name="author" content="Nikolai Tschacher">
+</head>
+
+<body>
+  <script type="text/javascript" src="dist/adblockDetector.min.js"></script>
+ 
+  <script type="text/javascript">
+    detectAdblock(function(isUsingAdblock) {
+      alert("Using Adblock: " + isUsingAdblock);
+    })
+  </script>
+</body>
+</html>
