@@ -31,25 +31,29 @@ The JavaScript function makes a HEAD request to a local resource that is flagged
 
 This resource does not exist locally, therefore a request must return a 404 error.
 
-If a 404 error is returned, then we know that either  
+However, adblock software aborts all HTTP requests to suspicious looking URLs, therefore execution doesn't even
+get to the point that a 404 error is obtained.
 
-- there is no adblock software running
-- the resource is not flagged by the adblock software
+If a 404 error is returned, one of the two following cases must hold:
 
-Instead, if the invocation of the function does not return an 404 error, we can be sure
+1. there is no adblock software running
+2. the resource is not flagged by the adblock software
+
+On the other hand, if the invocation of the function does not return an 404 error, it can be assumed
 that a adblock software intercepted the request and aborted it.
 
 ## Test
 
 You can test the functionality of adblock detector locally by opening the `demo.html` file in your favorite browser.
 
-The file must be served with a local HTTP server, since adblock detection does not work with the `file://` scheme (CORS issues).
+The file must be served with a local HTTP server, since adblock detection does not work with the `file://` scheme (because of CORS issues).
+
 This is not a problem, because no real website is hosted with the file scheme.
 
-Start local server: 
+Start a local server: 
 
 ```
 python -m http.server 8000
 ```
 
-Then visit the following URL in your browser: `http://localhost:8000/demo.html`
+Then visit the URL [http://localhost:8000/demo.html](http://localhost:8000/demo.html) in your browser.
