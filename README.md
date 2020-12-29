@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/adblock-detect-javascript-only)](https://www.npmjs.com/package/adblock-detect-javascript-only)
 
+[**Click here for a DEMO.**](https://incolumitas.com/2020/12/27/detecting-uBlock-Origin-and-Adblock-Plus-with-JavaScript-only/)
+
 This tiny library allows you to detect uBlock Origin, Adblock Plus and Ghostery with JavaScript only.
 
 Other adblock software is very likely also supported.
