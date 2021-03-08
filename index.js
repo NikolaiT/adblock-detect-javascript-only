@@ -17,7 +17,7 @@
  * detectAdblock(function(usingAdblock) { console.log("Using Adblocker: " + usingAdblock) })
  */
 function detectAdblock(callback) {
-  var flaggedURL = 'pagead/js/adsbygoogle.js';
+  var flaggedURL = 'https://adblockanalytics.com';
 
   if (window.fetch) {
     var request = new Request(flaggedURL, {
