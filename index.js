@@ -29,7 +29,7 @@ function detectAdblock(callback) {
         if (response.status === 404) {
           callback(false);
         } else {
-          callback('unknown');
+          callback('unknown (' + response.status + ')');
         }
       })
       .catch(function(error) {
@@ -48,7 +48,7 @@ function detectAdblock(callback) {
     if (http.status === 404) {
       callback(false);
     } else {
-      callback('unknown');
+      callback('unknown (' + http.status + ')');
     }
   }
 }
