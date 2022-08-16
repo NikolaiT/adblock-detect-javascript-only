@@ -24,9 +24,9 @@ The library was last tested with the following browsers and Adblock software:
 
 | Browser             | Adblock Software      | Last Tested   | Detection Works? |
 |---------------------|-----------------------|---------------|------------------|
-| Firefox/102.0       | Adblock Plus v3.10.1  | 16th Aug 2022 | ✓                |
-| Chrome/104.0.0.0    | uBlock Origin v1.31.2 | 16th Aug 2022 | ✓                |
-| Chrome/104.0.0.0    | Ghostery v8.5.4       | 16th Aug 2022 | ✓                |
+| Firefox/102.0       | Adblock Plus v5.0.4   | 16th Aug 2022 | ✓                |
+| Chrome/104.0.0.0    | uBlock Origin v1.43.0 | 16th Aug 2022 | ✓                |
+| Chrome/104.0.0.0    | Ghostery v8.7.4       | 16th Aug 2022 | ✓                |
 
 ## Usage
 
