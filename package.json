@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/NikolaiT/adblock-detect-javascript-only/issues"
   },
-  "homepage": "https://github.com/NikolaiT/adblock-detect-javascript-only"
+  "homepage": "https://github.com/NikolaiT/adblock-detect-javascript-only",
+  "dependencies": {
+    "uglifyjs": "^2.4.11"
+  }
 }

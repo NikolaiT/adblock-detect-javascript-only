@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Test Adblock Detection</title>
@@ -10,11 +11,12 @@
 
 <body>
   <script type="text/javascript" src="dist/adblockDetector.min.js"></script>
- 
+
   <script type="text/javascript">
-    detectAdblock(function(isUsingAdblock) {
-      alert("Using Adblock: " + isUsingAdblock);
-    })
+    detectAdblock().then((res) => {
+      alert(`Using Adblockers: ${JSON.stringify(res)}`);
+    });
   </script>
 </body>
+
 </html>

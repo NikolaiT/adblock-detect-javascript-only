@@ -1,54 +1,60 @@
 /**
  * Author: Nikolai Tschacher
  * Date: 28.12.2020
+ * Updated: 16.08.2022
  * Website: https://incolumitas.com/
  * 
  * Detecting uBlock Origin and Adblock Plus with JavaScript only.
  * 
- * How it works:
+ * Usage: detectAdblock().then((res) => { console.log(res) });
  * 
- * The requested baiting resource does not exist locally.
- * If no adblocker is available, the http status will be 404
- * If an adblocker is active, the send() / fetch() method will fail to begin with,
- * because the adblocker prevents the loading of the url.
- * 
- * Usage:
- * 
- * detectAdblock(function(usingAdblock) { console.log("Using Adblocker: " + usingAdblock) })
  */
-function detectAdblock(callback) {
-  var flaggedURL = 'https://adblockanalytics.com';
+function detectAdblock() {
+  const adblockTests = {
+    uBlockOrigin: {
+      url: 'https://incolumitas.com/data/pp34.js?sv=',
+      id: '837jlaBksSjd9jh',
+    },
+    adblockPlus: {
+      url: 'https://incolumitas.com/data/neutral.js?&ad_height=',
+      id: 'hfuBadsf3hFAk',
+    },
+  };
 
-  if (window.fetch) {
-    var request = new Request(flaggedURL, {
-      method: 'HEAD',
-      mode: 'no-cors',
-    });
-    fetch(request)
-      .then(function(response) {
-        if (response.status === 404) {
-          callback(false);
+  function canLoadRemoteScript(obj) {
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+
+      script.onload = function () {
+        if (document.getElementById(obj.id)) {
+          resolve(false);
         } else {
-          callback('unknown (' + response.status + ')');
+          resolve(true);
         }
-      })
-      .catch(function(error) {
-        callback(true);
-      });
-  } else {
-    var http = new XMLHttpRequest();
-    http.open('HEAD', flaggedURL, false);
+      }
 
-    try {
-      http.send();
-    } catch (err) {
-      callback(true);
-    }
+      script.onerror = function () {
+        resolve(true);
+      }
 
-    if (http.status === 404) {
-      callback(false);
-    } else {
-      callback('unknown (' + http.status + ')');
-    }
+      script.src = obj.url;
+      document.body.appendChild(script);
+    });
   }
+
+  return new Promise(function (resolve, reject) {
+    let promises = [
+      canLoadRemoteScript(adblockTests.uBlockOrigin),
+      canLoadRemoteScript(adblockTests.adblockPlus),
+    ];
+
+    Promise.all(promises).then((results) => {
+      resolve({
+        uBlockOrigin: results[0],
+        adblockPlus: results[1],
+      });
+    }).catch((err) => {
+      reject(err);
+    });
+  });
 }
