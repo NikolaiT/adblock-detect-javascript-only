@@ -4,6 +4,7 @@
   "description": "Detecting uBlock Origin, Adblock Plus and Ghostery with JavaScript only",
   "main": "index.js",
   "scripts": {
+    "build": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

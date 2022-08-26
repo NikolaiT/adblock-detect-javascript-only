@@ -15,17 +15,7 @@ Currently, the following two adblock lists are detected:
 
 There are no external requests to non-local URLs. Only JavaScript is required.
 
-The library has a tiny size of only 591 Bytes.
-
-```bash
-ll -h dist 
-total 8
-drwxr-xr-x   3 nikolaitschacher  staff    96B Aug 16 18:35 .
-drwxr-xr-x  11 nikolaitschacher  staff   352B Aug 16 18:45 ..
--rw-r--r--   1 nikolaitschacher  staff   591B Aug 16 18:49 adblockDetector.min.js
-```
-
-The library was last tested with the following browsers and Adblock software:
+The library has a tiny size of only 591 bytes and was last tested with the following browsers and Adblock software:
 
 | Browser             | Adblock Software      | Last Tested   | Detection Works? |
 |---------------------|-----------------------|---------------|------------------|
@@ -35,19 +25,35 @@ The library was last tested with the following browsers and Adblock software:
 
 ## Usage
 
-Usage in Browser:
+Install the package via npm: `npm i adblock-detect-javascript-only`
 
-```HTML
-<script type="text/javascript" src="dist/adblockDetector.min.js"></script>
- 
-<script type="text/javascript">
-  detectAdblock().then((res) => { 
-    alert("Using Adblockers: " + res);
-  });
-</script>
+Then copy the minified JavaScript file `adblockDetector.min.js` to your preferred location.
+
+```bash
+cp node_modules/adblock-detect-javascript-only/dist/adblockDetector.min.js .
 ```
 
-## Installation
+Then you can create a file `demo.html` like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Adblock Detection Demo</title>
+</head>
+<body>
+  <script type="text/javascript" src="./adblockDetector.min.js"></script>
+  <script type="text/javascript">
+    detectAdblock().then((res) => { 
+      alert("Using Adblockers: " + res);
+    });
+  </script>
+</body>
+</html>
+```
+
+## Installation from Github
 
 Simply clone the repository and then include the library in your website.
 
@@ -58,14 +64,6 @@ git clone https://github.com/NikolaiT/adblock-detect-javascript-only
 ```
 
 Then copy the file `dist/adblockDetector.min.js` into your local project.
-
-Alternatively, install the module via npm:
-
-```bash
-npm install adblock-detect-javascript-only
-```
-
-Copy the file from `npm_modules/adblock-detect-javascript-only/dist/adblockDetector.min.js` into your local folder.
 
 ## How does it work?
 
