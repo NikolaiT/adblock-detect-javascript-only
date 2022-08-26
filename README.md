@@ -53,6 +53,20 @@ Then you can create a file `demo.html` like this:
 </html>
 ```
 
+### Test
+
+You can test the functionality of adblock detector locally by opening the `demo.html` file in your favorite browser.
+
+The file must be served with a local HTTP server, since adblock detection does not work with the `file://` scheme (because of CORS issues). This is not a problem, because no real website is hosted and accessed via the file scheme.
+
+Start a local server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit the URL [http://localhost:8000/demo.html](http://localhost:8000/demo.html) in your browser.
+
 ## Installation from Github
 
 Simply clone the repository and then include the library in your website.
@@ -68,19 +82,3 @@ Then copy the file `dist/adblockDetector.min.js` into your local project.
 ## How does it work?
 
 The JavaScript function tries to load remote JavaScript resources that are blocked by adblockers. If the loading fails, it is assumed that an adblocker is present. If the loading succeeds, there is no adblocker installed.
-
-## Test
-
-You can test the functionality of adblock detector locally by opening the `demo.html` file in your favorite browser.
-
-The file must be served with a local HTTP server, since adblock detection does not work with the `file://` scheme (because of CORS issues).
-
-This is not a problem, because no real website is hosted and accessed via file scheme.
-
-Start a local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit the URL [http://localhost:8000/demo.html](http://localhost:8000/demo.html) in your browser.
