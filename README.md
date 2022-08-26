@@ -8,11 +8,16 @@ This tiny library allows you to detect uBlock Origin, Adblock Plus and Ghostery 
 
 Other adblock software is very likely also supported.
 
+Currently, the following two adblock lists are detected:
+
+1. Adblock EasyList: [https://github.com/easylist/easylist](https://github.com/easylist/easylist), the following sub list: [easylist_general_block.txt](https://github.com/easylist/easylist/blob/master/easylist/easylist_general_block.txt)
+2. uBlock Origin uAssets: [https://github.com/uBlockOrigin/uAssets](https://github.com/uBlockOrigin/uAssets), the following sub list: [filters-2022.txt](https://github.com/uBlockOrigin/uAssets/blob/master/filters/filters-2022.txt)
+
 There are no external requests to non-local URLs. Only JavaScript is required.
 
 The library has a tiny size of only 591 Bytes.
 
-```
+```bash
 ll -h dist 
 total 8
 drwxr-xr-x   3 nikolaitschacher  staff    96B Aug 16 18:35 .
@@ -48,7 +53,7 @@ Simply clone the repository and then include the library in your website.
 
 Clone:
 
-```
+```bash
 git clone https://github.com/NikolaiT/adblock-detect-javascript-only
 ```
 
@@ -56,12 +61,11 @@ Then copy the file `dist/adblockDetector.min.js` into your local project.
 
 Alternatively, install the module via npm:
 
-```
+```bash
 npm install adblock-detect-javascript-only
 ```
 
 Copy the file from `npm_modules/adblock-detect-javascript-only/dist/adblockDetector.min.js` into your local folder.
-
 
 ## How does it work?
 
@@ -75,9 +79,9 @@ The file must be served with a local HTTP server, since adblock detection does n
 
 This is not a problem, because no real website is hosted and accessed via file scheme.
 
-Start a local server: 
+Start a local server:
 
-```
+```bash
 python3 -m http.server 8000
 ```
 

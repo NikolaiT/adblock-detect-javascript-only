@@ -1,18 +1,16 @@
 {
   "name": "adblock-detect-javascript-only",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Detecting uBlock Origin, Adblock Plus and Ghostery with JavaScript only",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "detecting",
-    "adblock",
-    "uBlock",
-    "Origin",
-    "Adblock",
-    "Plus"
+    "adblock detection",
+    "uBlock detection",
+    "uBlock Origin",
+    "AdblockPlus"
   ],
   "repository": {
     "type": "git",
