@@ -36,20 +36,27 @@ cp node_modules/adblock-detect-javascript-only/dist/adblockDetector.min.js .
 Then you can create a file `demo.html` like this:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Adblock Detection Demo</title>
+  <title>Test Adblock Detection</title>
+  <meta name="description" content="Test Adblock Detection">
+  <meta name="author" content="Nikolai Tschacher">
 </head>
+
 <body>
-  <script type="text/javascript" src="./adblockDetector.min.js"></script>
+  <script type="text/javascript" src="adblockDetector.min.js"></script>
+
   <script type="text/javascript">
-    detectAdblock().then((res) => { 
-      alert("Using Adblockers: " + res);
+    detectAdblock().then((res) => {
+      alert(`Using Adblockers: ${JSON.stringify(res)}`);
     });
   </script>
 </body>
+
 </html>
 ```
 
