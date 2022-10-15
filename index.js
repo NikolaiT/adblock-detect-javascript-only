@@ -1,6 +1,6 @@
 /**
  * Author: Nikolai Tschacher
- * Updated: 16.08.2022
+ * Updated: 15.10.2022
  * Website: https://incolumitas.com/
  * 
  * Detect uBlock Origin, Adblock Plus and Ghostery with JavaScript only
@@ -17,7 +17,7 @@ function detectAdblock() {
     },
     // https://github.com/easylist/easylist/blob/master/easylist/easylist_general_block.txt
     adblockPlus: {
-      url: 'https://incolumitas.com/data/neutral.js?&ad_height=',
+      url: 'https://incolumitas.com/data/neutral.js?&adserver=',
       id: 'hfuBadsf3hFAk',
     },
   };
