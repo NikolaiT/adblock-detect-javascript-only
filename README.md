@@ -19,9 +19,9 @@ The library has a tiny size of only 591 bytes and was last tested with the follo
 
 | Browser             | Adblock Software      | Last Tested   | Detection Works? |
 |---------------------|-----------------------|---------------|------------------|
-| Firefox/102.0       | Adblock Plus v5.0.4   | 16th Aug 2022 | ✓                |
-| Chrome/104.0.0.0    | uBlock Origin v1.43.0 | 16th Aug 2022 | ✓                |
-| Chrome/104.0.0.0    | Ghostery v8.7.4       | 16th Aug 2022 | ✓                |
+| Firefox/102.0       | Adblock Plus v5.0.4   | 15th Oct 2022 | ✓                |
+| Chrome/104.0.0.0    | uBlock Origin v1.43.0 | 15th Oct 2022 | ✓                |
+| Chrome/104.0.0.0    | Ghostery v8.7.4       | 15th Oct 2022 | ✓                |
 
 ## Usage
 
