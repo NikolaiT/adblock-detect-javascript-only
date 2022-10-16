@@ -1,7 +1,7 @@
 {
   "name": "adblock-detect-javascript-only",
-  "version": "1.1.5",
-  "description": "Detecting uBlock Origin, Adblock Plus and Ghostery with JavaScript only",
+  "version": "1.1.6",
+  "description": "Detecting uBlock Origin, Adblock Plus and AdBlocker Ultimate with JavaScript only",
   "main": "index.js",
   "scripts": {
     "build": "uglifyjs index.js --output dist/adblockDetector.min.js",
@@ -11,7 +11,8 @@
     "adblock detection",
     "uBlock detection",
     "uBlock Origin",
-    "AdblockPlus"
+    "AdblockPlus",
+    "AdBlocker Ultimate"
   ],
   "repository": {
     "type": "git",

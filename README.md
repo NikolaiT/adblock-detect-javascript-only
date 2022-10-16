@@ -1,27 +1,32 @@
-# Adblock detection with JavaScript only
+# Adblock Detection with JavaScript only
 
 [![npm](https://img.shields.io/npm/v/adblock-detect-javascript-only)](https://www.npmjs.com/package/adblock-detect-javascript-only)
 
+Install NPM Package:
+
+```bash
+npm i adblock-detect-javascript-only
+```
+
 [**Click here for a DEMO.**](https://incolumitas.com/2020/12/27/detecting-uBlock-Origin-and-Adblock-Plus-with-JavaScript-only/)
 
-This tiny library allows you to detect uBlock Origin, Adblock Plus and Ghostery with JavaScript only.
-
-Other adblock software is very likely also supported.
+This tiny library allows you to detect uBlock Origin, Adblock Plus and AdBlocker Ultimate with JavaScript only. Other Adblocker software is very likely also supported, since many Adblockers use the same blocking lists.
 
 Currently, the following two adblock lists are detected:
 
-1. Adblock EasyList: [https://github.com/easylist/easylist](https://github.com/easylist/easylist), the following sub list: [easylist_general_block.txt](https://github.com/easylist/easylist/blob/master/easylist/easylist_general_block.txt)
+1. Adblock Plus EasyList: [https://github.com/easylist/easylist](https://github.com/easylist/easylist), the following sub list: [easylist_general_block.txt](https://github.com/easylist/easylist/blob/master/easylist/easylist_general_block.txt)
 2. uBlock Origin uAssets: [https://github.com/uBlockOrigin/uAssets](https://github.com/uBlockOrigin/uAssets), the following sub list: [filters-2022.txt](https://github.com/uBlockOrigin/uAssets/blob/master/filters/filters-2022.txt)
 
-There are no external requests to non-local URLs. Only JavaScript is required.
+Only JavaScript is required.
 
 The library has a tiny size of only 591 bytes and was last tested with the following browsers and Adblock software:
 
 | Browser             | Adblock Software      | Last Tested   | Detection Works? |
 |---------------------|-----------------------|---------------|------------------|
-| Firefox/102.0       | Adblock Plus v5.0.4   | 15th Oct 2022 | ✓                |
-| Chrome/104.0.0.0    | uBlock Origin v1.43.0 | 15th Oct 2022 | ✓                |
-| Chrome/104.0.0.0    | Ghostery v8.7.4       | 15th Oct 2022 | ✓                |
+| Chrome/106.0.0.0    | uBlock Origin v1.44.4 | 16th Oct 2022 | ✓                |
+| Firefox/105.0       | uBlock Origin v1.44.4 | 16th Oct 2022 | ✓                |
+| Chrome/106.0.0.0    | Adblock Plus v5.1.3   | 16th Oct 2022 | ✓                |
+| Firefox/105.0       | AdBlocker Ultimate v3.7.19  | 16th Oct 2022 | ✓                |
 
 ## Usage
 
@@ -88,4 +93,4 @@ Then copy the file `dist/adblockDetector.min.js` into your local project.
 
 ## How does it work?
 
-The JavaScript function tries to load remote JavaScript resources that are blocked by adblockers. If the loading fails, it is assumed that an adblocker is present. If the loading succeeds, there is no adblocker installed.
+The JavaScript function tries to load remote JavaScript resources that are blocked by Adblockers. If the loading fails, it is assumed that an adblocker is present. If the loading succeeds, there is no adblocker installed.
