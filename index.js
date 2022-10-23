@@ -1,6 +1,6 @@
 /**
  * Author: Nikolai Tschacher
- * Updated: 16.10.2022
+ * Updated: 23.10.2022
  * Website: https://incolumitas.com/
  * 
  * Detects uBlock Origin, Adblock Plus and AdBlocker Ultimate with JavaScript only.
@@ -12,7 +12,7 @@ function detectAdblock() {
   const adblockTests = {
     // https://github.com/uBlockOrigin/uAssets/blob/master/filters/filters-2022.txt
     uBlockOrigin: {
-      url: 'https://incolumitas.com/data/pp34.js?sv=',
+      url: 'https://incolumitas.com/data/exosrv.js',
       id: '837jlaBksSjd9jh',
     },
     // https://github.com/easylist/easylist/blob/master/easylist/easylist_general_block.txt
