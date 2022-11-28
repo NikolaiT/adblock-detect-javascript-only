@@ -1,6 +1,6 @@
 {
   "name": "adblock-detect-javascript-only",
-  "version": "1.1.8",
+  "version": "1.1.10",
   "description": "Detecting uBlock Origin, Adblock Plus and AdBlocker Ultimate with JavaScript only",
   "main": "index.js",
   "scripts": {
